@@ -27,7 +27,7 @@
     "redux": "^4.2.0",
     "typescript": "^4.7.2",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "yup": "^1.23.0"
   },
   "scripts": {
     "start": "react-scripts start",
