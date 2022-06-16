@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hookform/resolvers": "^2.9.1",
+    "@hookform/resolvers": "^2.8.8",
     "@lottiefiles/react-lottie-player": "^3.4.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -13,7 +13,7 @@
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.2",
-    "@types/yup": "^0.29.14",
+    "@types/yup": "^0.29.13",
     "axios": "^0.27.2",
     "moment": "^2.29.3",
     "notyf": "^3.10.0",
@@ -52,8 +52,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
-,
+  },
   "engines": {
     "node": "16.x"
   }
