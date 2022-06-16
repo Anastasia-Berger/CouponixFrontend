@@ -1,0 +1,19 @@
+.CouponList {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0px 5% ;
+}
+
+.CouponList > .CouponListArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 100%;
+}

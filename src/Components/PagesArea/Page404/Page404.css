@@ -1,0 +1,15 @@
+.Page404 {
+    font-family: 'Fredericka the Great', cursive;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.Page404>p {
+    font-size: 1.5em;
+    line-height: auto;
+    margin: 5px;
+}

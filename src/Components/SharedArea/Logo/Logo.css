@@ -1,0 +1,13 @@
+.Logo {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo > img {
+    margin: 10px;
+    width: auto;
+    height: 90%;
+}

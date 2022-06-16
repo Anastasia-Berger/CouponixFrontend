@@ -1,0 +1,12 @@
+.CustomLink {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.CustomLink .active {
+    color: red;
+    border: 2px dashed;
+    padding: 5px 15px;
+}
