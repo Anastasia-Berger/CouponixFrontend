@@ -9,7 +9,6 @@ function Footer(): JSX.Element {
             
 			<p>All rights reserved to Anastasia Berger.</p>
             
-            <Total/>
         </div>
     );
 }

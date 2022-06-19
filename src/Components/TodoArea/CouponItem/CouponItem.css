@@ -1,20 +1,23 @@
 .CouponItem {
-  width: 25%;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
 
-  margin: 5px;
-  padding: 5px;
+  width: 25%;
+  height: auto;
 
-  background-image: linear-gradient(45deg, lightgreen, white);
+  background: url(/src/Assets/Img/shopping-bag-front-blank.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* auto|length|cover|contain|initial|inherit */
 }
 
 .CouponItem img {
   width: auto;
-  height: 136px;
+  height: 50px;
   border-radius: 50%;
   border: 1px solid black;
   vertical-align: middle;

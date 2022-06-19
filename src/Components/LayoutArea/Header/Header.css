@@ -1,18 +1,26 @@
 .Header {
-	background-color: #FFF;
+    background-color: #FFF;
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: repeat(12, 1fr);
-    -webkit-box-shadow: 0px 13px 50px -15px rgba(0,0,0,0.29); 
-box-shadow: 0px 13px 50px -15px rgba(0,0,0,0.29)
-;
-z-index: 99;
+    /* -webkit-box-shadow: 0px 13px 50px -15px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 13px 50px -15px rgba(0, 0, 0, 0.29);
+    z-index: 99; */
 }
 
-.Header > .Logo {
-    grid-column: 3 span;
+.Header>.Logo {
+    /* grid-column: 4 span; */
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
-.Header > .Menu {
-    grid-column: 7 span;
+.Header>.Menu {
+    /* grid-column: 6 span; */
+    grid-column-start: 4;
+    grid-column-end: 9;
+}
+
+.Header > .Total {
+    grid-column-start: 10;
+    grid-column-end: 11;
 }

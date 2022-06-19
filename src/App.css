@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-rows: 10% 90% ;
+  grid-template-rows: 10% 80% 10%;
   grid-template-columns: repeat(12, 1fr);
   height: 100%;
   width: 100%;
@@ -10,24 +10,10 @@
   grid-column: 12 span;
 }
 
-
-.container {
-  height: 100%;
-  width: 100%;
-
-  overflow-y: auto;
-  grid-column: 12 span;
-
-  grid-template-rows: 90% 10% ;
-  grid-template-columns: repeat(12, 1fr);
-
-}
-
-
-.container>.Main {
+.App>.Main {
   grid-column: 12 span;
 }
 
-.container>.Footer {
+.App>.Footer {
   grid-column: 12 span;
 }

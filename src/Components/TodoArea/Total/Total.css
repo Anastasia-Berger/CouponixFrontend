@@ -1,4 +1,22 @@
 .Total {
-	
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: url(/src/Assets/Img/shopping-trolley.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    flex-direction: row;
+    padding: 10px 30px;
 }
 
+.Total>.total_number {
+    font-family: 'Water Brush', cursive;
+    font-size: 1.5vw;
+
+    background-color: rgba(21, 255, 0, 0.693);
+    border: 2px solid rgb(215, 215, 215);
+
+    border-radius: 50%;
+    padding: 3px 13px;
+}
