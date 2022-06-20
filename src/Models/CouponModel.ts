@@ -1,4 +1,4 @@
-export class Coupon {
+export class CouponModel {
     public id?:number; 
     public title?:string; 
     public description?:string;

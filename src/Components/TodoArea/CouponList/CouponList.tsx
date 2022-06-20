@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
-import { Coupon } from "../../../Models/Coupon";
+import { CouponModel } from "../../../Models/CouponModel";
 
 import notify, { SccMsg } from "../../../Services/Notifications";
 import { getCoupons } from "../../../Services/CouponsApi";
 import CouponItem from "../CouponItem/CouponItem";
 import "./CouponList.css";
 import CustomLink from "../../SharedArea/CustomLink/CustomLink";
+import FlipCard from "../../SharedArea/FlipCard/FlipCard";
 
 function CouponList(): JSX.Element {
 
-    const [coupons, setCoupons] = useState<Coupon[]>([]);
+    const [coupons, setCoupons] = useState<CouponModel[]>([]);
 
     // Side effects goes here... // Hook
     useEffect(() => {
@@ -31,9 +32,10 @@ function CouponList(): JSX.Element {
             <CustomLink to="/coupons/add">
                 <FaPlusCircle size={42} />
             </CustomLink>
-            
+
             <div className="CouponListArea">
-                {coupons?.map((coupon) => <CouponItem key={coupon.id} coupon={coupon} />)}
+                {/* {coupons?.map((coupon) => <CouponItem key={coupon.id} coupon={coupon} />)} */}
+                {coupons.map(coupon => <FlipCard key={coupon.id} coupon={coupon} />)}
 
             </div>
 

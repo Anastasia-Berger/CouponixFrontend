@@ -1,10 +1,10 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { Coupon } from "../../../Models/Coupon";
+import { CouponModel } from "../../../Models/CouponModel";
 import ILTime from "../../SharedArea/ILTime/ILTime";
 import "./CouponItem.css";
 
 interface CouponItemProps {
-    coupon: Coupon;
+    coupon: CouponModel;
 }
 
 function CouponItem(props: CouponItemProps): JSX.Element {
