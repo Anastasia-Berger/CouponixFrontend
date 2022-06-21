@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CouponModel } from "../../../Models/CouponModel";
 import ILDate from "../ILDate/ILDate";
 import ILTime from "../ILTime/ILTime";
-import ShoppingBag from "../../../Assets/Img/shopping_bag.png";
+import bag from '../../../Assets/Img/shopping-bag-front-blank.png';
 
 import "./FlipCard.css";
 
@@ -30,7 +30,8 @@ function FlipCard(props: FlipCardProps): JSX.Element {
 
                 
                 <div className="flip-card-front">
-                    <img src={ShoppingBag} alt="Shopping bag"/>
+                    <img src="#" alt="Shopping bag"/>
+                    <span>{props.coupon.title}</span>
                 </div>
 
 

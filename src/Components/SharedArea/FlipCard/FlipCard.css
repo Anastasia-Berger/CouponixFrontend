@@ -1,15 +1,18 @@
 .FlipCard {}
 
-/* .flip-card img {
-    width: 225px;
-    height: 300px;
-} */
+.flip-card img {
+    width: 200px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px solid black;
+    vertical-align: middle;
+    margin: 65px auto 10px auto;
+}
 
 .flip-card {
     background-color: transparent;
-    width: 225px;
+    width: 400px;
     height: 300px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px;
     margin: 5px;
     padding: 5px;
@@ -29,7 +32,7 @@
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateX(-180deg);
 }
 
 /* Position the front and back side */
@@ -45,15 +48,30 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    background-color: #bbb;
+    background-image: url("/src/Assets/Img/shopping-bag-front-blank.png"); /* The image used */
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: contain; /* auto|length|cover|contain|initial|inherit */
+
     color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
+
+background-image: url("/src/Assets/Img/open-bag.png"); /* The image used */
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size:  100%, 80%; /* auto|length|cover|contain|initial|inherit */
+
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateX(-180deg);
 }
 
 .buttons {

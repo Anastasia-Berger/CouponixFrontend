@@ -5,6 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
+
 }
 
 .CouponList > .CouponListArea {
@@ -15,7 +16,4 @@
     justify-content: center;
 
     column-gap: 20px;
-
-    /* height: 100%;
-    width: 100%; */
 }
