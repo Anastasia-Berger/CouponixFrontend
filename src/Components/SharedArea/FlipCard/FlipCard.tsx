@@ -30,7 +30,7 @@ function FlipCard(props: FlipCardProps): JSX.Element {
 
                 
                 <div className="flip-card-front">
-                    <img src="#" alt="Shopping bag"/>
+                <img src="https://picsum.photos/150" alt="" />
                     <span>{props.coupon.title}</span>
                 </div>
 
@@ -38,8 +38,8 @@ function FlipCard(props: FlipCardProps): JSX.Element {
                 <div className="flip-card-back">
                     <h1>{props.coupon.title}</h1>
                     <p>{props.coupon.description}</p>
-                    <p>{props.coupon.group}</p>
-                    <p><ILDate date={props.coupon.when || new Date()} /> <ILTime date={props.coupon.when || new Date()} /></p>
+                    <p>{props.coupon.category}</p>
+                    <p><ILDate date={props.coupon.startDate || new Date()} /> <ILTime date={props.coupon.startDate || new Date()} /></p>
                     <div className="buttons">
                         {/* <button onClick={()=>deleteTask(props.task.id || 0)}><FaTrash size={42} /> </button> */}
                         {/* <button onClick={()=>updateTask(props.task.id || 0)}><FaEdit size={42} /></button> */}

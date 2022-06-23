@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { CouponModel } from "../../../Models/CouponModel";
-
 import notify, { SccMsg } from "../../../Services/Notifications";
 import { getCoupons } from "../../../Services/CouponsApi";
-import CouponItem from "../CouponItem/CouponItem";
 import "./CouponList.css";
 import CustomLink from "../../SharedArea/CustomLink/CustomLink";
 import FlipCard from "../../SharedArea/FlipCard/FlipCard";
@@ -18,7 +16,7 @@ function CouponList(): JSX.Element {
         if (coupons?.length === 0) {
             getCoupons()
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     setCoupons(res.data);
                     notify.success(SccMsg.GOT_TASKs);
                 })
@@ -28,15 +26,15 @@ function CouponList(): JSX.Element {
 
     return (
         <div className="CouponList">
+
             <h1>Our Coupons</h1>
+            
             <CustomLink to="/coupons/add">
                 <FaPlusCircle size={42} />
             </CustomLink>
 
             <div className="CouponListArea">
-                {/* {coupons?.map((coupon) => <CouponItem key={coupon.id} coupon={coupon} />)} */}
                 {coupons.map(coupon => <FlipCard key={coupon.id} coupon={coupon} />)}
-
             </div>
 
         </div>

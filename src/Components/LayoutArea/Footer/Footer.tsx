@@ -1,3 +1,4 @@
+import Clock from "../../SharedArea/Clock/Clock";
 import SocialMedia from "../../SharedArea/SocialMedia/SocialMedia";
 import Total from "../../TodoArea/Total/Total";
 import "./Footer.css";
@@ -9,6 +10,8 @@ function Footer(): JSX.Element {
             
 			<p>All rights reserved to Anastasia Berger.</p>
             
+            <Clock />
+
         </div>
     );
 }

@@ -20,8 +20,8 @@ function CouponItem(props: CouponItemProps): JSX.Element {
                 <p>Id: {props.coupon.id}</p>
                 <p>Title: {props.coupon.title}</p>
                 <p>Desc: {props.coupon.description?.substring(0, 15)} </p>
-                <p>Group: {props.coupon.group} </p>
-                < ILTime date={props.coupon.when || new Date()} />
+                <p>Group: {props.coupon.category} </p>
+                < ILTime date={props.coupon.startDate || new Date()} />
             </div>
 
             <div className="buttons">
