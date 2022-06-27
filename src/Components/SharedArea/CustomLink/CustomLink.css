@@ -1,9 +1,3 @@
 .CustomLink {
     text-decoration: none;
 }
-
-.CustomLink .active {
-    color: red;
-    border: 2px dashed;
-    padding: 5px 15px;
-}

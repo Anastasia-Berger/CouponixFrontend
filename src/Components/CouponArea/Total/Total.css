@@ -2,24 +2,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
+}
 
-    background: url("../../../Assets/Img/shopping-trolley.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+.receipt {
+    font-family: 'Gruppo', cursive;
+
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(215, 215, 215);
+
+    width: 70%;
+    padding: 10px 5px 10px 5px;
+    margin-bottom: -6vw;
+    text-align: center;
+
+    z-index: 5;
 
 }
 
-.Total>.total_number {
-    font-family: 'Water Brush', cursive;
-    font-size: 1.5vw;
+.receipt:hover{
+    transform: translateY(-6vw);
+}
 
-    background-color: rgba(21, 255, 0, 0.693);
-    border: 2px solid rgb(215, 215, 215);
+.receipt>p {
+    margin: 0;
+    color: #818181;
+}
 
-    border-radius: 50%;
-    padding: 3px 13px;
+.receiptTitle {
+    letter-spacing: 5px;
+    font-size: 1.3vw;
+    font-weight: 500;
+
+}
+
+.Total>img {
+    width: 100%;
+}
+
+.frontBasket {
+    z-index: 10;
+    margin-bottom: 3vw;
+}
+
+.backBasket {
+    z-index: 2;
 }

@@ -1,0 +1,16 @@
+.CompaniesList {
+    overflow-y: auto;
+    height: 100%;
+    text-align: center;
+
+}
+
+.CompaniesList > .CompanyListArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+
+    column-gap: 20px;
+}

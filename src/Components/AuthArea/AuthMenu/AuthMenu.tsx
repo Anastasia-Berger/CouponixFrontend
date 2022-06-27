@@ -26,7 +26,7 @@ function AuthMenu(): JSX.Element {
                 </>
                 :
                 <>
-                    <span>👋hello guest👋</span>
+                    <span>👋Hello guest👋</span>
                     &nbsp;
                     <Link to='/register'>Register</Link>
                     &nbsp;

@@ -1,9 +1,11 @@
 import "./Credits.css";
 
+import credits from "../../../Assets/Img/super-sale.png";
+
 function Credits(): JSX.Element {
     return (
         <div className="Credits">
-			credits
+			<img src={credits} alt="Credits" />
         </div>
     );
 }

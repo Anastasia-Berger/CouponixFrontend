@@ -15,7 +15,6 @@ function Header(): JSX.Element {
         <div className="Header">
             <Logo />
             <Menu />
-            <Total />
             <AuthMenu/>
         </div>
     );

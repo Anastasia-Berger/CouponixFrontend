@@ -1,3 +1,11 @@
 .AuthMenu {
-	
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+
+    width: 100%;
 }

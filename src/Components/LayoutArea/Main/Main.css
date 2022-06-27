@@ -5,4 +5,20 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 90% 100%;
+
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.Main > .Routing{
+    grid-column-start: 3;
+    grid-column-end: 11;
+}
+
+.Main > .Total {
+    grid-column-start: 10;
+    grid-column-end: 12;
+
+    grid-row-start: 2;
 }

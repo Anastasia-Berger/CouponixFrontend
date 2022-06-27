@@ -1,21 +1,33 @@
 .Menu {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 
-    height: auto;
     width: 100%;
+
+    border: 1px solid #0A84B9;
+    border-radius: 50px;
+    background-color: #2ca5d9;
+
+    margin: 25px 0px;
 
 }
 
-/* .Menu a {
-    color: rgb(255, 234, 0);
-} */
+.Menu>.CustomLink a {
+    font-size: 1.7vw;
+    font-family: 'Kaushan Script', cursive;
+    color: #fff;
+}
 
-.Menu > .CustomLink {
-    font-size: 1.3vw;
-    /* font-family: 'Water Brush', cursive; */
+.Menu>.CustomLink>a:hover {
+    color: #000;
+}
 
+.Menu>.CustomLink>a.active {
+    border: 2px dashed #f6ff00;
+    padding: 3px 15px;
+    color: #f6ff00;
 }

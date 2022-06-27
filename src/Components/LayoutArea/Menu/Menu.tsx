@@ -7,6 +7,7 @@ function Menu(): JSX.Element {
 
             <CustomLink to="/home"> Home </CustomLink>
             <CustomLink to="/about"> About </CustomLink>
+            <CustomLink to="/companies"> Companies </CustomLink>
             <CustomLink to="/coupons"> Coupons </CustomLink>
             <CustomLink to="/credits"> Credits </CustomLink>
             <CustomLink to="/contact"> Contact </CustomLink>

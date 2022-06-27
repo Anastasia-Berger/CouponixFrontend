@@ -4,16 +4,15 @@
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
-        align-content: center;
+        align-content: flex-start;
 
         height: 100%;
         width: 100%;
 
         overflow-y: auto;
-
 }
 
-.About>.title {
-        font-family: 'Fredericka the Great', cursive;
-        font-size: 2vw;
+.About>p {
+        font-size: 20px;
+        padding: 0px 20px;
 }

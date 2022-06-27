@@ -30,7 +30,7 @@ function CouponList(): JSX.Element {
     return (
         <div className="CouponList">
 
-            <h1>Our Coupons</h1>
+            <h1 className="page-title">Our Coupons</h1>
             
             <CustomLink to="/coupons/add"> <FaPlusCircle size={42} /> </CustomLink>
 
