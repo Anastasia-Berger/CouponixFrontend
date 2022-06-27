@@ -3,12 +3,13 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { UserModel } from "../../../Models/UserModel";
-import { CredentialsModel } from "../../../Models/CredentialsModel";
-import { login } from "../../../WebApi/UsersApi";
-import notify, { SccMsg } from "../../../Services/Notifications";
-import store from "../../../Redux/store";
-import { loginAction } from "../../../Redux/AuthAppState";
+import { CredentialsModel } from "../../Models/CredentialsModel";
+import notify, { SccMsg } from "../../Services/Notifications";
+import store from "../../Redux/store";
+import { loginAction } from "../../Redux/AuthAppState";
+import { UserModel } from "../../Models/UserModel";
+import { login } from "../../WebApi/UsersApi";
+
 function Login(): JSX.Element {
     const navigate = useNavigate();
 
@@ -30,14 +31,14 @@ function Login(): JSX.Element {
     const onSubmit = async (credentials: CredentialsModel) => {
 
         await login(credentials)
-            .then(res => {
+            .then((res: { data: UserModel; }) => {
                 notify.success(SccMsg.LOGIN_SUCCESS);
                 // Updating global state
                 store.dispatch(loginAction(res.data));
                 navigate('/tasks');
 
             })
-            .catch(err => {
+            .catch((err: { message: any; }) => {
                 notify.error(err);
                 console.log(err.message);
             });

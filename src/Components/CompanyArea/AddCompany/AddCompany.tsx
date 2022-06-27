@@ -2,26 +2,34 @@ import "./AddCompany.css";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { CouponModel } from "../../../Models/CouponModel";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
-import { addCoupon } from "../../../WebApi/CouponsApi";
 import notify from "../../../Services/Notifications";
 import { CompanyModel } from "../../../Models/CompanyModel";
 import { addCompany } from "../../../WebApi/CompaniesApi";
 
+
 function AddCompany(): JSX.Element {
 
-    const schema = yup.object().shape({
-        category:
-            yup.string()
-                .required("Category Name is required"),
-        title:
-            yup.string()
-                .required("Title Name is required"),
-        description:
-            yup.string()
-                .required("Description Name is required"),
 
+    const schema = yup.object().shape({
+
+        name:
+            yup.string()
+                .required("Name is required"),
+        email:
+            yup.string()
+                .required("Email is required"),
+        // image:
+        //     yup.mixed()
+        //         .test('required', "You need to provide a file", (value) => {
+        //             return value && value.length
+        //         })
+        //         .test("fileSize", "The file is too large", (value, context) => {
+        //             return value && value[0] && value[0].size <= 200000;
+        //         })
+        //         .test("type", "We only support png", function (value) {
+        //             return value && value[0] && value[0].type === "image/png";
+        //         })
     });
 
     const { register, handleSubmit, formState: { errors, isDirty, isValid } } =
@@ -31,19 +39,21 @@ function AddCompany(): JSX.Element {
         console.log(company);
         console.log(JSON.stringify(company));
 
-        addCompany(company){
-            .then(  res => {console.log(res.data);} )
-            .catch( err => { notify.error(err); 
-                             console.log(err)});
+        addCompany(company)
+            .then(res => { console.log(res.data); })
+            .catch(err => {
+                notify.error(err);
+                console.log(err)
+            });
     }
 
     return (
         <div className="sendToRemote">
-            {/* <div className="interactive">
-                <h1>Add Coupon</h1>
-                <p>Please fill all fields of form on right for add a new coupon.</p>
+            <div className="interactive">
+                <h1>Add Company</h1>
+                <p>Please fill all fields of form on right for add a new company.</p>
 
-                <Player
+                {/* <Player
                     autoplay
                     loop
                     src="https://assets3.lottiefiles.com/packages/lf20_58bmsu1o.json"
@@ -51,123 +61,43 @@ function AddCompany(): JSX.Element {
 
                     <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
 
-                </Player>
-            </div> */}
+                </Player> */}
+            </div>
 
-            <form onSubmit={handleSubmit(addCoupon)} >
+            <form onSubmit={handleSubmit(addCompany)} >
 
-                <input
+            <input
                     type="text"
-                    {...register("category")}
-                    name="category"
-                    placeholder="Category" />
-                <br />
-                <span>
-                    {
-                        errors.category?.message ?
-                            <><span>{errors?.category?.message} </span></> :
-                            <><label htmlFor="category">Category</label></>
-                    }
-                </span>
-                <br />
-
-
-                <input
-                    id="title"
-                    type="text"
-                    {...register("title")}
-                    name="title"
-                    placeholder="Title" />
-                <br />
-                <span>
-                    {
-                        errors.title?.message ?
-                            <><span>{errors?.title?.message} </span></> :
-                            <><label htmlFor="title">Title</label></>
-                    }
-                </span>
-                <br />
-
-
-                <input
-                    type="text"
-                    {...register("description")}
+                    {...register("name")}
                     name="description"
                     placeholder="Description" />
                 <br />
                 <span>
                     {
-                        errors.description?.message ?
-                            <><span>{errors?.description?.message} </span></> :
-                            <><label htmlFor="description">Description</label></>
+                        errors.name?.message ?
+                            <><span>{errors?.name?.message} </span></> :
+                            <><label htmlFor="name">Name</label></>
                     }
                 </span>
                 <br />
 
-
+                
                 <input
-                    type="date"
-                    {...register("startDate")}
-                    name="startDate"
-                    placeholder="Start Date"
-                />
+                    type="email"
+                    {...register("email")}
+                    name="email"
+                    placeholder="Email" />
+                <br />
                 <span>
                     {
-                        errors.startDate?.message ?
-                            <><span>{errors?.startDate?.message} </span></> :
-                            <><label htmlFor="startDate">Start Date</label></>
-                    }
-                </span>
-
-
-                <input
-                    type="date"
-                    {...register("endDate")}
-                    name="endDate"
-                    placeholder="End Date"
-                />
-                <span>
-                    {
-                        errors.endDate?.message ?
-                            <><span>{errors?.endDate?.message} </span></> :
-                            <><label htmlFor="endDate">End Date</label></>
+                        errors.email?.message ?
+                            <><span>{errors?.email?.message} </span></> :
+                            <><label htmlFor="email">Email</label></>
                     }
                 </span>
                 <br />
 
-
-                <input
-                    type="number"
-                    {...register("amount")}
-                    name="amount"
-                    placeholder="Amount"
-                />
-                <span>
-                    {
-                        errors.amount?.message ?
-                            <><span>{errors?.amount?.message} </span></> :
-                            <><label htmlFor="amount">Amount</label></>
-                    }
-                </span>
-
-
-                <input
-                    type="number"
-                    {...register("price")}
-                    name="price"
-                    placeholder="Price"
-                />
-                <span>
-                    {
-                        errors.price?.message ?
-                            <><span>{errors?.price?.message} </span></> :
-                            <><label htmlFor="price">Price</label></>
-                    }
-                </span>
-                <br />
-
-
-{/* 
+                {/* 
                 <input
                     type="file"
                     {...register("image")}
@@ -184,7 +114,7 @@ function AddCompany(): JSX.Element {
                 <br />
 
 
-                <button type="submit">ADD MY COUPONIX</button>
+                <button type="submit">ADD MY COMPANY</button>
             </form>
         </div>
     );
@@ -192,10 +122,6 @@ function AddCompany(): JSX.Element {
 
 export default AddCompany;
 function company(company: any): any {
-    throw new Error("Function not implemented.");
-}
-
-function then(arg0: (res: any) => void) {
     throw new Error("Function not implemented.");
 }
 

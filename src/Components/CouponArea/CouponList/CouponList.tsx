@@ -1,3 +1,5 @@
+import "./CouponList.css";
+
 import { useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { CouponModel } from "../../../Models/CouponModel";

@@ -11,7 +11,7 @@ import Register from "../../Register/Register";
 import EditCoupon from "../../CompanyArea/EditCompany/EditCompany";
 import Login from "../../Login/Login";
 import Logout from "../../Logout/Logout";
-import CompanyList from "../../CompanyArea/CompanyList/CompanyList";
+import CompanyList from "../../CompanyArea/CompanyList/CompaniesList";
 import EditCompany from "../../CompanyArea/EditCompany/EditCompany";
 import DeleteCompany from "../../CompanyArea/DeleteCompany/DeleteCompany";
 import AddCompany from "../../Forms/AddCompany/AddCompany";

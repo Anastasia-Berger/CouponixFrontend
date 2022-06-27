@@ -1,9 +1,11 @@
+import { CouponModel } from "./CouponModel";
+
 export class CompanyModel {
     public id?: number;
     public name?: string;
     public email?: string;
     public password?: string;
-    public coupons?: Array<CompanyModel>;
+    public coupons?: Array<CouponModel>;
 
     public image?: string;
 
@@ -12,7 +14,7 @@ export class CompanyModel {
         name?: string,
         email?: string,
         title?: string,
-        coupons?: Array<CompanyModel>,
+        coupons?: Array<CouponModel>,
 
         image?: string
     ) {

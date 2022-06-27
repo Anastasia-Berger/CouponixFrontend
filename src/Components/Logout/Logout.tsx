@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { logoutAction } from "../../../Redux/AuthAppState";
-import store from "../../../Redux/store";
-import { tasksClearAction } from "../../../Redux/TasksAppState";
-import notify, { SccMsg } from "../../../Services/Notifications";
+import { logoutAction } from "../../Redux/AuthAppState";
+import store from "../../Redux/store";
+import notify, { SccMsg } from "../../Services/Notifications";
+
 import "./Logout.css";
 
 function Logout(): JSX.Element {
@@ -23,3 +23,7 @@ function Logout(): JSX.Element {
 }
 
 export default Logout;
+function tasksClearAction(): any {
+    throw new Error("Function not implemented.");
+}
+

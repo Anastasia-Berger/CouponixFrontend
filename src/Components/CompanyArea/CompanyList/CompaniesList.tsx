@@ -1,3 +1,5 @@
+import "./CompaniesList.css";
+
 import { SetStateAction, useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { CompanyModel } from "../../../Models/CompanyModel";
@@ -17,7 +19,7 @@ function CompaniesList(): JSX.Element {
     useEffect(() => {
         if (companies?.length === 0) {
             getCompanies()
-                .then((res: { data: SetStateAction<CompanyModel[]>; }) => {
+                .then((res) => {
                     // console.log(res.data);
                     setCompanies(res.data);
                     notify.success(SccMsg.GOT_TASKs);
@@ -26,11 +28,12 @@ function CompaniesList(): JSX.Element {
         }
     }, []);
 
-    return (
-        <div className="CompanyList">
 
-            <h1>Our Companies</h1>
-            
+    return (
+        <div className="CompaniesList">
+
+            <h1>Our Coupons</h1>
+
             <CustomLink to="/companies/add"> <FaPlusCircle size={42} /> </CustomLink>
 
             {(companies?.length > 0)
@@ -38,7 +41,7 @@ function CompaniesList(): JSX.Element {
 
                 <div className="container">
                     {/* {tasks.map(task => <TodoItem key={task.id} task={task} />)} */}
-                    {companies?.map(company => <CompanyItem key={company.id} company={company}/>)}
+                    {companies.map(company => <CompanyItem key={company.id} company={company} />)}
                 </div>
 
                 :
@@ -47,6 +50,7 @@ function CompaniesList(): JSX.Element {
             }
         </div>
     );
+
 
 }
 
