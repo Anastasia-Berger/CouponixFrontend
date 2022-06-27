@@ -1,14 +1,15 @@
-import "./AddCoupon.css";
+import "./AddCompany.css";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CouponModel } from "../../../Models/CouponModel";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
-import { addCoupon } from "../../../Services/CouponsApi";
+import { addCoupon } from "../../../WebApi/CouponsApi";
 import notify from "../../../Services/Notifications";
+import { CompanyModel } from "../../../Models/CompanyModel";
+import { addCompany } from "../../../WebApi/CompaniesApi";
 
-function AddCoupon(): JSX.Element {
-
+function AddCompany(): JSX.Element {
 
     const schema = yup.object().shape({
         category:
@@ -20,54 +21,20 @@ function AddCoupon(): JSX.Element {
         description:
             yup.string()
                 .required("Description Name is required"),
-        startDate:
-            yup.date()
-                .max(new Date(), 'Umm... future dob? come on!')
-                .default(new Date())
-                .typeError("You must specify a start date")
-                .required("Birthday is required")
-                .nullable().default(() => new Date()),
-        endDate:
-            yup.date()
-                .max(new Date(), 'Umm... future dob? come on!')
-                .default(new Date())
-                .typeError("You must specify a end date")
-                .required("Birthday is required")
-                .nullable().default(() => new Date()),
-        amount:
-            yup.number()
-                .moreThan(-1)
-                .typeError("You must specify an amount")
-                .required("Amount is required"),
-        price:
-            yup.number()
-                .moreThan(-1)
-                .typeError("You must specify a price")
-                .required("Price is required"),
-        image:
-            yup.mixed()
-                .test('required', "You need to provide a file", (value) => {
-                    return value && value.length
-                })
-                .test("fileSize", "The file is too large", (value, context) => {
-                    return value && value[0] && value[0].size <= 200000;
-                })
-                .test("type", "We only support png", function (value) {
-                    return value && value[0] && value[0].type === "image/png";
-                })
+
     });
 
     const { register, handleSubmit, formState: { errors, isDirty, isValid } } =
-        useForm<CouponModel>({ mode: "all", resolver: yupResolver(schema) });
+        useForm<CompanyModel>({ mode: "all", resolver: yupResolver(schema) });
 
-    const sendToRemote = (coupon: CouponModel) => {
-        console.log(coupon);
-        console.log(JSON.stringify(coupon));
+    const sendToRemote = (company: CompanyModel) => {
+        console.log(company);
+        console.log(JSON.stringify(company));
 
-        addCoupon(coupon)
-            .then( res => {console.log(res.data);} )
-            .catch( err =>{ notify.error(err); 
-                console.log(err)});
+        addCompany(company){
+            .then(  res => {console.log(res.data);} )
+            .catch( err => { notify.error(err); 
+                             console.log(err)});
     }
 
     return (
@@ -87,12 +54,7 @@ function AddCoupon(): JSX.Element {
                 </Player>
             </div> */}
 
-            {/* const addCoupon = async (coupon:CouponModel) => {
-                console.log(JSON.stringify(coupon));
-            } */}
-
             <form onSubmit={handleSubmit(addCoupon)} >
-
 
                 <input
                     type="text"
@@ -108,7 +70,6 @@ function AddCoupon(): JSX.Element {
                     }
                 </span>
                 <br />
-
 
 
                 <input
@@ -128,7 +89,6 @@ function AddCoupon(): JSX.Element {
                 <br />
 
 
-
                 <input
                     type="text"
                     {...register("description")}
@@ -145,14 +105,12 @@ function AddCoupon(): JSX.Element {
                 <br />
 
 
-
                 <input
                     type="date"
                     {...register("startDate")}
                     name="startDate"
                     placeholder="Start Date"
                 />
-
                 <span>
                     {
                         errors.startDate?.message ?
@@ -168,7 +126,6 @@ function AddCoupon(): JSX.Element {
                     name="endDate"
                     placeholder="End Date"
                 />
-
                 <span>
                     {
                         errors.endDate?.message ?
@@ -176,14 +133,7 @@ function AddCoupon(): JSX.Element {
                             <><label htmlFor="endDate">End Date</label></>
                     }
                 </span>
-
                 <br />
-
-
-
-
-
-
 
 
                 <input
@@ -217,11 +167,6 @@ function AddCoupon(): JSX.Element {
                 <br />
 
 
-
-
-
-
-
 {/* 
                 <input
                     type="file"
@@ -239,17 +184,18 @@ function AddCoupon(): JSX.Element {
                 <br />
 
 
-
-
-
                 <button type="submit">ADD MY COUPONIX</button>
             </form>
         </div>
     );
 }
 
-export default AddCoupon;
-function coupon(coupon: any): any {
+export default AddCompany;
+function company(company: any): any {
+    throw new Error("Function not implemented.");
+}
+
+function then(arg0: (res: any) => void) {
     throw new Error("Function not implemented.");
 }
 

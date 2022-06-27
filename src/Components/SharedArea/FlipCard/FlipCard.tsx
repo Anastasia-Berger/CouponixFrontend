@@ -11,10 +11,10 @@ import "./FlipCard.css";
 interface FlipCardProps {
     coupon: CouponModel;
 }
+
 function FlipCard(props: FlipCardProps): JSX.Element {
 
     const [id,setId] = useState<number>(props.coupon.id || 0)
-
 
     const updateCoupon = (id:number)=>{
         window.alert('going to update '+id);

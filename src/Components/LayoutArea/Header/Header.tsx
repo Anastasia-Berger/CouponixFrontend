@@ -5,8 +5,9 @@ import roof from '../../../Assets/Img/roof.png';
 
 import Menu from "../Menu/Menu";
 import "./Header.css";
-import Total from "../../TodoArea/Total/Total";
+import Total from "../../CouponArea/Total/Total";
 import Clock from "../../SharedArea/Clock/Clock";
+import AuthMenu from "../../AuthArea/AuthMenu/AuthMenu";
 
 
 function Header(): JSX.Element {
@@ -15,6 +16,7 @@ function Header(): JSX.Element {
             <Logo />
             <Menu />
             <Total />
+            <AuthMenu/>
         </div>
     );
 }

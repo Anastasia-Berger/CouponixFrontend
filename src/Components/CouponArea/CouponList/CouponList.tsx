@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 import { CouponModel } from "../../../Models/CouponModel";
 import notify, { SccMsg } from "../../../Services/Notifications";
-import { getCoupons } from "../../../Services/CouponsApi";
+import { getCoupons } from "../../../WebApi/CouponsApi";
 import "./CouponList.css";
 import CustomLink from "../../SharedArea/CustomLink/CustomLink";
 import FlipCard from "../../SharedArea/FlipCard/FlipCard";
+import EmptyView from "../../SharedArea/EmptyView/EmptyView";
 
 function CouponList(): JSX.Element {
 
@@ -29,14 +30,20 @@ function CouponList(): JSX.Element {
 
             <h1>Our Coupons</h1>
             
-            <CustomLink to="/coupons/add">
-                <FaPlusCircle size={42} />
-            </CustomLink>
+            <CustomLink to="/coupons/add"> <FaPlusCircle size={42} /> </CustomLink>
 
-            <div className="CouponListArea">
-                {coupons.map(coupon => <FlipCard key={coupon.id} coupon={coupon} />)}
-            </div>
+            {(coupons?.length > 0)
+                ?
 
+                <div className="container">
+                    {/* {tasks.map(task => <TodoItem key={task.id} task={task} />)} */}
+                    {coupons.map(coupon => <FlipCard key={coupon.id} coupon={coupon} />)}
+                </div>
+
+                :
+
+                <EmptyView msg='No Coupons for you!' />
+            }
         </div>
     );
 

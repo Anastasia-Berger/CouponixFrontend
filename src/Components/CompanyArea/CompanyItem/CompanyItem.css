@@ -1,0 +1,37 @@
+.CompanyItem {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+
+  width: 25%;
+  height: auto;
+
+  background: url(/src/Assets/Img/shopping-bag-front-blank.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* auto|length|cover|contain|initial|inherit */
+}
+
+.CompanyItem img {
+  width: auto;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  vertical-align: middle;
+
+}
+
+.CompanyItem>div:nth-child(2) {
+  margin-left: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+}

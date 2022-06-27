@@ -1,6 +1,6 @@
 import Clock from "../../SharedArea/Clock/Clock";
 import SocialMedia from "../../SharedArea/SocialMedia/SocialMedia";
-import Total from "../../TodoArea/Total/Total";
+import Total from "../../CouponArea/Total/Total";
 import "./Footer.css";
 
 function Footer(): JSX.Element {

@@ -1,14 +1,20 @@
 .Header {
-    background-color: #FFF;
+    /* background-color: #FFF; */
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: repeat(12, 1fr);
     /* -webkit-box-shadow: 0px 13px 50px -15px rgba(0, 0, 0, 0.29);
-    box-shadow: 0px 13px 50px -15px rgba(0, 0, 0, 0.29);
-    z-index: 99; */
+    box-shadow: 0px 13px 50px -15px rgba(0, 0, 0, 0.29);*/
+    z-index: 99;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
     
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 
+    background-image: url("../../../Assets/Img/roof.png"); /* The image used */
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 90% 100%;
 }
 
 .Header>.Logo {

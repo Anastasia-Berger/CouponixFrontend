@@ -1,13 +1,16 @@
 .Total {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    background: url(/src/Assets/Img/shopping-trolley.png);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+
+    background: url("../../../Assets/Img/shopping-trolley.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 80%;
-    flex-direction: row;
-    padding: 10px 30px;
+    background-size: 100%;
+
 }
 
 .Total>.total_number {

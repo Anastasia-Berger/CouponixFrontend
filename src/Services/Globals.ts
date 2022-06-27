@@ -3,15 +3,21 @@ class Globals {
 
 class DevelopmentGlobals extends Globals {
     public urls = {
-        // coupons: 'https://raw.githubusercontent.com/KobiShashs/TODO-JSON/main/coupons'
-        coupons: 'http://localhost:8080/api/coupons'
+        users : 'http://localhost:8080/api/users/',
+        companies: 'http://localhost:8080/api/companies/',
+
+        coupons: 'https://raw.githubusercontent.com/KobiShashs/TODO-JSON/main/coupons'
+        // coupons: 'http://localhost:8080/api/coupons'
     }
 }
 
 class ProductionGlobals extends Globals {
     public urls = {
-        // coupons: 'https://raw.githubusercontent.com/KobiShashs/TODO-JSON/main/coupons'
-        coupons: 'http://localhost:8080/api/coupons'
+        users : 'http://localhost:8080/api/users/',
+        companies: 'http://localhost:8080/api/companies/',
+
+        coupons: 'https://raw.githubusercontent.com/KobiShashs/TODO-JSON/main/coupons'
+        // coupons: 'http://localhost:8080/api/coupons'
 
     }
 }
