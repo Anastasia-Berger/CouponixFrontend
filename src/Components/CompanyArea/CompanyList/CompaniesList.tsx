@@ -5,7 +5,6 @@ import { FaPlusCircle } from "react-icons/fa";
 import { CompanyModel } from "../../../Models/CompanyModel";
 import notify, { SccMsg } from "../../../Services/Notifications";
 import { getCompanies } from "../../../WebApi/CompaniesApi";
-import "./CouponList.css";
 import CustomLink from "../../SharedArea/CustomLink/CustomLink";
 import FlipCard from "../../SharedArea/FlipCard/FlipCard";
 import EmptyView from "../../SharedArea/EmptyView/EmptyView";
