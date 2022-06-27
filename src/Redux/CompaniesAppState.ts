@@ -12,59 +12,59 @@ export class CompaniesAppState {
 export enum CompaniesActionType {
     CompaniesDownloaded = "CompaniesDownloaded",
     CompanyAdded = "CompanyAdded",
-    CouponUpdated = "CouponUpdated",
-    CouponDeleted = "CouponDeleted",
-    CouponsClear = "CouponsClear"
+    CompanyUpdated = "CompanyUpdated",
+    CompanyDeleted = "CompanyDeleted",
+    CompaniesClear = "CompaniesClear"
 }
 
 
 // Step 3 - Define Action Interface to describe actionAction & payload if needed
-export interface CouponAction {
-    type: CouponsActionType;
+export interface CompanyAction {
+    type: CompaniesActionType;
     payload?: any;
 }
 
 // Step 4 - Export Action Creators functions that gets payload and return relevant Action
-export function couponsDownloadedAction(coupons: CouponModel[]): CouponAction {
-    return { type: CouponsActionType.CouponsDownloaded, payload: coupons };
+export function companiesDownloadedAction(companies: CompanyModel[]): CompanyAction {
+    return { type: CompaniesActionType.CompaniesDownloaded, payload: companies };
 }
 
-export function couponAddedAction(coupon: CouponModel): CouponAction {
-    return { type: CouponsActionType.CouponAdded, payload: coupon };
+export function companyAddedAction(company: CompanyModel): CompanyAction {
+    return { type: CompaniesActionType.CompanyAdded, payload: company };
 }
 
-export function couponUpdatedAction(coupon: CouponModel): CouponAction {
-    return { type: CouponsActionType.CouponUpdated, payload: coupon };
+export function companyUpdatedAction(company: CompanyModel): CompanyAction {
+    return { type: CompaniesActionType.CompanyUpdated, payload: company };
 }
 
-export function couponDeletedAction(id: number): CouponAction {
-    return { type: CouponsActionType.CouponDeleted, payload: id };
+export function companyDeletedAction(id: number): CompanyAction {
+    return { type: CompaniesActionType.CompanyDeleted, payload: id };
 }
 
-export function couponsClearAction(): CouponAction {
-    return { type: CouponsActionType.CouponsClear, payload: {} };
+export function companiesClearAction(): CompanyAction {
+    return { type: CompaniesActionType.CompaniesClear, payload: {} };
 }
 
 
 // Step 5 - Reducer function perform the required action
-export function couponsReducer(currentState: CouponsAppState = new CouponsAppState(), action: CouponAction): CouponsAppState {
+export function companiesReducer(currentState: CompaniesAppState = new CompaniesAppState(), action: CompanyAction): CompaniesAppState {
     const newState = { ...currentState } //Spread Operator
     switch (action.type) {
-        case CouponsActionType.CouponsDownloaded:
-            newState.coupons = action.payload;
+        case CompaniesActionType.CompaniesDownloaded:
+            newState.companies = action.payload;
             break;
-        case CouponsActionType.CouponAdded:
-            newState.coupons.push(action.payload);
+        case CompaniesActionType.CompanyAdded:
+            newState.companies.push(action.payload);
             break;
-        case CouponsActionType.CouponUpdated:
-            const idx = newState.coupons.findIndex(coupon => coupon.id === action.payload.id);
-            newState.coupons[idx] = action.payload;
+        case CompaniesActionType.CompanyUpdated:
+            const idx = newState.companies.findIndex(company => company.id === action.payload.id);
+            newState.companies[idx] = action.payload;
             break;
-        case CouponsActionType.CouponDeleted:
-            newState.coupons = newState.coupons.filter(c => c.id !== action.payload);
+        case CompaniesActionType.CompanyDeleted:
+            newState.companies = newState.companies.filter(c => c.id !== action.payload);
             break;
-        case CouponsActionType.CouponsClear:
-            newState.coupons = [];
+        case CompaniesActionType.CompaniesClear:
+            newState.companies = [];
             break;
     }
     return newState;
